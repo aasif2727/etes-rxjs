@@ -245,10 +245,12 @@ var LeaveServicev2Provider = (function () {
     };
     LeaveServicev2Provider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__email_service_email_service__["a" /* EmailServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__email_service_email_service__["a" /* EmailServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__toast_message_toast_message__["a" /* ToastMessageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__toast_message_toast_message__["a" /* ToastMessageProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__email_service_email_service__["a" /* EmailServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__toast_message_toast_message__["a" /* ToastMessageProvider */]])
     ], LeaveServicev2Provider);
     return LeaveServicev2Provider;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=leave-servicev2.js.map
@@ -300,8 +302,6 @@ var AuthServiceProvider = (function () {
         return __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().sendPasswordResetEmail(credentials.userid);
     };
     AuthServiceProvider.prototype.signOut = function () {
-        localStorage.removeItem('myProfileObject');
-        localStorage.clear();
         return __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().signOut();
     };
     AuthServiceProvider.prototype.signUp = function (credentials) {
@@ -343,10 +343,13 @@ var AuthServiceProvider = (function () {
     };
     AuthServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["x" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["x" /* ToastController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__app_context_app_context__["a" /* AppContextProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__user_service_user_service__["a" /* UserServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__user_service_user_service__["a" /* UserServiceProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["x" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_5_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_6__app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__user_service_user_service__["a" /* UserServiceProvider */]])
     ], AuthServiceProvider);
     return AuthServiceProvider;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=auth-service.js.map
@@ -466,10 +469,9 @@ var UserServiceProvider = (function () {
     };
     UserServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], UserServiceProvider);
     return UserServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=user-service.js.map
@@ -559,7 +561,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <div class="UserHeader">\n\n      <ion-title>\n\n        <ion-item class="Itemheader">\n\n          <ion-avatar item-start>\n\n            <!-- <img [src]="photoURL ? photoURL : \'assets/imgs/defaults/user.jpg\'" style="width:80px;height:80px;border-radius:50%"> -->\n\n            <img style="width: 65px;height: 65px;" [src]="(appContext.myProfileObject?.photoUrl) || \'assets/imgs/defaults/user.jpg\' ">\n\n          </ion-avatar>\n\n        </ion-item>\n\n      </ion-title>\n\n      <h2 class="UserName"> {{ (appContext.myProfileObject?.name) || "Guest" }}</h2>\n\n      <p class="UserEmail"> {{ (appContext.myProfileObject?.email)}}</p>\n\n    </div>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content style="background-color: #f5f5f5 !important">\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-icon name="home" item-left *ngIf="p.title == \'Home\'"></ion-icon>\n\n        <ion-icon name="contact" item-left *ngIf="p.title == \'Profile\'"></ion-icon>\n\n        <ion-icon name="card" item-start *ngIf="p.title == \'Leaves\'"></ion-icon>\n\n        <!-- <ion-icon name="stats" item-left *ngIf="p.title == \'Reports\'"></ion-icon> -->\n\n        <ion-icon name="logo-rss" item-left *ngIf="p.title == \'Feedback\'"></ion-icon>\n\n        {{p.title}}\n\n      </button>\n\n      <button menuClose ion-item (click)="signOut()">\n\n          <ion-icon name="log-out" md="md-log-out" item-start></ion-icon>\n\n          Sign Out\n\n        </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\app\app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <div class="UserHeader">\n\n      <ion-title>\n\n        <ion-item class="Itemheader">\n\n          <ion-avatar item-start>\n\n            <!-- <img [src]="photoURL ? photoURL : \'assets/imgs/defaults/user.jpg\'" style="width:80px;height:80px;border-radius:50%"> -->\n\n            <img style="width: 65px;height: 65px;" [src]="(appContext.myProfileObject?.photoUrl) || \'assets/imgs/defaults/user.jpg\' ">\n\n          </ion-avatar>\n\n        </ion-item>\n\n      </ion-title>\n\n      <h2 class="UserName"> {{ (appContext.myProfileObject?.name) || "Guest" }}</h2>\n\n      <p class="UserEmail"> {{ (appContext.myProfileObject?.email)}}</p>\n\n    </div>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content style="background-color: #f5f5f5 !important">\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        <ion-icon name="home" item-left *ngIf="p.title == \'Home\'"></ion-icon>\n\n        <ion-icon name="contact" item-left *ngIf="p.title == \'Profile\'"></ion-icon>\n\n        <ion-icon name="card" item-start *ngIf="p.title == \'Leaves\'"></ion-icon>\n\n        <!-- <ion-icon name="stats" item-left *ngIf="p.title == \'Reports\'"></ion-icon> -->\n\n        <ion-icon name="logo-rss" item-left *ngIf="p.title == \'Feedback\'"></ion-icon>\n\n        {{p.title}}\n\n      </button>\n\n      <button menuClose ion-item (click)="signOut()">\n\n          <ion-icon name="log-out" md="md-log-out" item-start></ion-icon>\n\n          Sign Out\n\n        </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\app\app.html"*/,
             styles: ["\n  \n  @-webkit-keyframes animate {\n      from  {background-position: 0 0 }\n      to  {background-position: 100% 0  }\n\n      }\n\n\n  @keyframes animate {\n      from  {background-position: 0 0 }\n      to  {background-position: 100% 0  }\n\n      }\n\n  .UserHeader\n  {\n    height: 120px;\n    min-width: 100%;\n    min-height: 100%;\n    background-image: url('assets/imgs/bg1.png') !important;\n    animation:animate 45s infinite;\n    background-color: #039be5 !important;\n  }\n  "]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["u" /* Platform */],
@@ -616,10 +618,9 @@ var AppErrorHandlerProvider = (function () {
     };
     AppErrorHandlerProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]])
     ], AppErrorHandlerProvider);
     return AppErrorHandlerProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=app-error-handler.js.map
@@ -704,10 +705,9 @@ var NotificationService = (function () {
     };
     NotificationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__email_service_email_service__["a" /* EmailServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__email_service_email_service__["a" /* EmailServiceProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_2__email_service_email_service__["a" /* EmailServiceProvider */]])
     ], NotificationService);
     return NotificationService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=notification-service.js.map
@@ -791,10 +791,9 @@ var EmailServiceProvider = (function () {
     };
     EmailServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], EmailServiceProvider);
     return EmailServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=email-service.js.map
@@ -840,10 +839,9 @@ var ToastMessageProvider = (function () {
     };
     ToastMessageProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["x" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["x" /* ToastController */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["x" /* ToastController */]])
     ], ToastMessageProvider);
     return ToastMessageProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=toast-message.js.map
@@ -934,10 +932,11 @@ var UserServiceV2Provider = (function () {
     };
     UserServiceV2Provider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_service_auth_service__["a" /* AuthServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_service_auth_service__["a" /* AuthServiceProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_service_auth_service__["a" /* AuthServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_3__app_context_app_context__["a" /* AppContextProvider */]])
     ], UserServiceV2Provider);
     return UserServiceV2Provider;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=user-service-v2.js.map
@@ -982,47 +981,47 @@ var map = {
 		8
 	],
 	"../pages/forgot-password/forgot-password.module": [
-		1162,
+		1152,
 		15
 	],
 	"../pages/home/home.module": [
-		1152,
+		1153,
 		14
 	],
 	"../pages/my-leaves/my-leaves.module": [
-		1153,
+		1154,
 		0
 	],
 	"../pages/new-leave/new-leave.module": [
-		1154,
+		1155,
 		7
 	],
 	"../pages/notifications/notifications.module": [
-		1155,
+		1156,
 		2
 	],
 	"../pages/report-annual/report-annual.module": [
-		1156,
+		1157,
 		13
 	],
 	"../pages/report-reportee/report-reportee.module": [
-		1157,
+		1158,
 		12
 	],
 	"../pages/report-team/report-team.module": [
-		1158,
+		1159,
 		11
 	],
 	"../pages/report/report.module": [
-		1159,
+		1160,
 		1
 	],
 	"../pages/search-leaves/search-leaves.module": [
-		1160,
+		1161,
 		6
 	],
 	"../pages/seeall-tdy/seeall-tdy.module": [
-		1161,
+		1162,
 		5
 	],
 	"../pages/seeall-tmrw/seeall-tmrw.module": [
@@ -1183,12 +1182,15 @@ var DetailsviewPage = (function () {
     };
     DetailsviewPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-detailsview',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\detailsview\detailsview.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n            <ion-icon (click)="closeModal()" name="md-arrow-round-back"></ion-icon> &nbsp;\n\n            View\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card class="cardBorder" [ngStyle]="{\'border-left-color\':getColor(status)}">\n\n    <div class="itemStyle">\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img [src]="photoUrl ? photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n        </ion-avatar>\n\n        <h2>{{name }}</h2>\n\n        <p>{{createdAt | date : "MMM d, y" }}</p>\n\n      </ion-item>\n\n    </div>\n\n    <hr>\n\n    <ion-card-content>\n\n      <div class="contentStyle">\n\n        <p> Hey!!! I will be on leave from\n\n          <span class="FontAvatar">{{from | date : "MMM d, y"}}</span> to\n\n          <span class="FontAvatar">{{to | date : "MMM d, y"}}</span> due to\n\n          <span class="FontAvatar">{{reason }}</span>\n\n        </p>\n\n      </div>\n\n    </ion-card-content>\n\n    <hr>\n\n  </ion-card>\n\n\n\n<div *ngIf="appContext.duringthisTimeCollection">\n\n  <h3 style="position: relative;left: 6px;">During This Time</h3>\n\n\n\n  <ion-list>\n\n    <ion-item  *ngFor="let res of appContext.duringthisTimeCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject">\n\n      <ion-thumbnail item-start>\n\n        <img [src]="res.owner.photoUrl ? res.owner.photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n      </ion-thumbnail>\n\n      <h2 class="itemStyle">{{res?.owner?.name }}</h2>\n\n      <p class="contentStyle"> {{res?.owner?.team?.name }}</p>\n\n\n\n      <p>{{res?.from | date : "MMM d, y"}}&nbsp;\n\n        <ion-icon name="arrow-round-forward"></ion-icon>&nbsp;\n\n        {{res?.to | date : "MMM d, y"}}\n\n      </p>\n\n      <hr>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\detailsview\detailsview.html"*/,
+            selector: 'page-detailsview',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\detailsview\detailsview.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n            <ion-icon (click)="closeModal()" name="md-arrow-round-back"></ion-icon> &nbsp;\n\n            View\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card class="cardBorder" [ngStyle]="{\'border-left-color\':getColor(status)}">\n\n    <div class="itemStyle">\n\n      <ion-item>\n\n        <ion-avatar item-start>\n\n          <img [src]="photoUrl ? photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n        </ion-avatar>\n\n        <h2>{{name }}</h2>\n\n        <p>{{createdAt | date : "MMM d, y" }}</p>\n\n      </ion-item>\n\n    </div>\n\n    <hr>\n\n    <ion-card-content>\n\n      <div class="contentStyle">\n\n        <p> Hey!!! I will be on leave from\n\n          <span class="FontAvatar">{{from | date : "MMM d, y"}}</span> to\n\n          <span class="FontAvatar">{{to | date : "MMM d, y"}}</span> due to\n\n          <span class="FontAvatar">{{reason }}</span>\n\n        </p>\n\n      </div>\n\n    </ion-card-content>\n\n    <hr>\n\n  </ion-card>\n\n\n\n<div *ngIf="appContext.duringthisTimeCollection">\n\n  <h3 style="position: relative;left: 6px;">During This Time</h3>\n\n\n\n  <ion-list>\n\n    <ion-item  *ngFor="let res of appContext.duringthisTimeCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject">\n\n      <ion-thumbnail item-start>\n\n        <img [src]="res.owner.photoUrl ? res.owner.photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n      </ion-thumbnail>\n\n      <h2 class="itemStyle">{{res?.owner?.name }}</h2>\n\n      <p class="contentStyle"> {{res?.owner?.team?.name }}</p>\n\n\n\n      <p>{{res?.from | date : "MMM d, y"}}&nbsp;\n\n        <ion-icon name="arrow-round-forward"></ion-icon>&nbsp;\n\n        {{res?.to | date : "MMM d, y"}}\n\n      </p>\n\n      <hr>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\detailsview\detailsview.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["z" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["z" /* ViewController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["z" /* ViewController */]])
     ], DetailsviewPage);
     return DetailsviewPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=detailsview.js.map
@@ -1267,10 +1269,9 @@ var commentsController = (function () {
     };
     commentsController = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */]])
     ], commentsController);
     return commentsController;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=comments-controller.js.map
@@ -1306,10 +1307,9 @@ var TeamServiceProvider = (function () {
     };
     TeamServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], TeamServiceProvider);
     return TeamServiceProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=team-service.js.map
@@ -1540,10 +1540,12 @@ var LeaveServiceProvider = (function () {
     };
     LeaveServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__auth_service_auth_service__["a" /* AuthServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__auth_service_auth_service__["a" /* AuthServiceProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__email_service_email_service__["a" /* EmailServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__email_service_email_service__["a" /* EmailServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_3__auth_service_auth_service__["a" /* AuthServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__email_service_email_service__["a" /* EmailServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], LeaveServiceProvider);
     return LeaveServiceProvider;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=leave-service.js.map
@@ -1768,10 +1770,11 @@ var ImageProvider = (function () {
     ;
     ImageProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__app_context_app_context__["a" /* AppContextProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__providers_user_service_user_service__["a" /* UserServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_user_service_user_service__["a" /* UserServiceProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_5__app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_user_service_user_service__["a" /* UserServiceProvider */]])
     ], ImageProvider);
     return ImageProvider;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=image-service.js.map
@@ -1886,6 +1889,7 @@ var AppModule = (function () {
                         { loadChildren: '../pages/detailsview/detailsview.module#DetailsviewPageModule', name: 'DetailsviewPage', segment: 'detailsview', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-user-profile/edit-user-profile.module#EditUserProfilePageModule', name: 'EditUserProfilePage', segment: 'edit-user-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/feedback/feedback.module#FeedbackPageModule', name: 'FeedbackPage', segment: 'feedback', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/forgot-password/forgot-password.module#ForgotPasswordPageModule', name: 'ForgotPasswordPage', segment: 'forgot-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/my-leaves/my-leaves.module#MyLeavesPageModule', name: 'MyLeavesPage', segment: 'my-leaves', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/new-leave/new-leave.module#NewLeavePageModule', name: 'NewLeavePage', segment: 'new-leave', priority: 'low', defaultHistory: [] },
@@ -1896,7 +1900,6 @@ var AppModule = (function () {
                         { loadChildren: '../pages/report/report.module#ReportPageModule', name: 'ReportPage', segment: 'report', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search-leaves/search-leaves.module#SearchLeavesPageModule', name: 'SearchLeavesPage', segment: 'search-leaves', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/seeall-tdy/seeall-tdy.module#SeeAllTdyPageModule', name: 'SeeAllTdyPage', segment: 'seeall-tdy', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/forgot-password/forgot-password.module#ForgotPasswordPageModule', name: 'ForgotPasswordPage', segment: 'forgot-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/seeall-tmrw/seeall-tmrw.module#SeeAllTmrwPageModule', name: 'SeeAllTmrwPage', segment: 'seeall-tmrw', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signin/signin.module#SigninPageModule', name: 'SigninPage', segment: 'signin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
@@ -1991,31 +1994,9 @@ var AppContextProvider = (function () {
         this.myLeaves = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         this.getAllTeams = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         this.searchDateRange = {};
-        debugger;
-        // if(!this.myProfileObject){
-        //   this.myProfileObject = localStorage.getItem('myProfileObject');
-        // }
-        // else{
-        //   this.myProfile.subscribe(profile => {
-        //     this.myProfileObject = profile;
-        //     localStorage.setItem('myProfileObject',profile);
-        //   })
-        // }
+        console.log("Hello App Context");
         this.myProfile.subscribe(function (profile) {
             _this.myProfileObject = profile;
-            localStorage.setItem('myProfileObject', profile);
-            console.log(profile);
-            var jsonObj = {
-                'email': profile.email,
-                'empId': profile.empId,
-                'isManager': profile.isManager,
-                'name': profile.name,
-                'phoneNumber': profile.phoneNumber,
-                'photoUrl': profile.photoUrl,
-                'team': profile.team,
-                'manager': profile.manager
-            };
-            console.log(jsonObj);
         });
         this.myTeamMembers.subscribe(function (teamMates) {
             _this.myTeamMembersCollection = teamMates;
@@ -2246,10 +2227,9 @@ var NamePipe = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
             name: 'fetchname'
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__providers_user_service_user_service__["a" /* UserServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_user_service_user_service__["a" /* UserServiceProvider */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_user_service_user_service__["a" /* UserServiceProvider */]])
     ], NamePipe);
     return NamePipe;
-    var _a;
 }());
 
 //# sourceMappingURL=name-pipe.js.map

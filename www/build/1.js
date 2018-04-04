@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 1159:
+/***/ 1160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportPageModule", function() { return ReportPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__report__ = __webpack_require__(1192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__report__ = __webpack_require__(1193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -120,12 +120,11 @@ var ReportAnnualPage = (function () {
     ], ReportAnnualPage.prototype, "barCanvas", void 0);
     ReportAnnualPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report-annual',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-annual\report-annual.html"*/'<ion-content padding>\n  <ion-card class="report-card">\n    <ion-card-header>\n      Bar Chart\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #barCanvas></canvas>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-annual\report-annual.html"*/,
+            selector: 'page-report-annual',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-annual\report-annual.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Bar Chart\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <canvas #barCanvas></canvas>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-annual\report-annual.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
     ], ReportAnnualPage);
     return ReportAnnualPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=report-annual.js.map
@@ -193,12 +192,11 @@ var ReportReporteePage = (function () {
     ], ReportReporteePage.prototype, "doughnutCanvas", void 0);
     ReportReporteePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report-reportee',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-reportee\report-reportee.html"*/'<ion-content padding>\n  <ion-card class="report-card">\n    <ion-card-header>\n      Doughnut Chart\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #doughnutCanvas></canvas>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-reportee\report-reportee.html"*/,
+            selector: 'page-report-reportee',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-reportee\report-reportee.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Doughnut Chart\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <canvas #doughnutCanvas></canvas>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-reportee\report-reportee.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
     ], ReportReporteePage);
     return ReportReporteePage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=report-reportee.js.map
@@ -284,19 +282,18 @@ var ReportTeamPage = (function () {
     };
     ReportTeamPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report-team',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-team\report-team.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Line Chart\n\n    </ion-card-header>\n\n    <ion-card-content *ngIf="doughnutChartData">\n\n        <div style="display: block">\n\n<!--            <canvas baseChart-->\n\n<!--            [data]="doughnutChartData"-->\n\n<!--            [labels]="doughnutChartLabels"-->\n\n<!--            [chartType]="doughnutChartType"-->\n\n<!--></canvas>-->\n\n          </div>\n\n\n\n    </ion-card-content>\n\n \n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-team\report-team.html"*/,
+            selector: 'page-report-team',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-team\report-team.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Line Chart\n\n    </ion-card-header>\n\n    <ion-card-content *ngIf="doughnutChartData">\n\n        <div style="display: block">\n\n<!--            <canvas baseChart-->\n\n<!--            [data]="doughnutChartData"-->\n\n<!--            [labels]="doughnutChartLabels"-->\n\n<!--            [chartType]="doughnutChartType"-->\n\n<!--></canvas>-->\n\n          </div>\n\n\n\n    </ion-card-content>\n\n \n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-team\report-team.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], ReportTeamPage);
     return ReportTeamPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=report-team.js.map
 
 /***/ }),
 
-/***/ 1192:
+/***/ 1193:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -408,12 +405,14 @@ var ReportPage = (function () {
     };
     ReportPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report\report.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Reports</ion-title>\n    <ion-buttons end>\n      <button ion-button>\n          <ion-icon name="download"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-tabs>\n    <ion-tab [root]="tab1Root" tabTitle="Annual" tabIcon="chat"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Team" tabIcon="chat"></ion-tab>\n    <ion-tab [root]="tab3Root" tabTitle="Individual" tabIcon="chat"></ion-tab>\n  </ion-tabs>\n</ion-content>\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report\report.html"*/,
+            selector: 'page-report',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report\report.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Reports</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button>\n\n          <ion-icon name="download"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-tabs>\n\n    <ion-tab [root]="tab1Root" tabTitle="Annual" tabIcon="chat"></ion-tab>\n\n    <ion-tab [root]="tab2Root" tabTitle="Team" tabIcon="chat"></ion-tab>\n\n    <ion-tab [root]="tab3Root" tabTitle="Individual" tabIcon="chat"></ion-tab>\n\n  </ion-tabs>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report\report.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__providers_leave_service_leave_service__["a" /* LeaveServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_leave_service_leave_service__["a" /* LeaveServiceProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_7__providers_app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__providers_app_context_app_context__["a" /* AppContextProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_leave_service_leave_service__["a" /* LeaveServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
     ], ReportPage);
     return ReportPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=report.js.map

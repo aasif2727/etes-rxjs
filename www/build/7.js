@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 1154:
+/***/ 1155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewLeavePageModule", function() { return NewLeavePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_leave__ = __webpack_require__(1189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_leave__ = __webpack_require__(1190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helper_common_methods__ = __webpack_require__(1167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81,17 +81,16 @@ var commonMethods = (function () {
     };
     commonMethods = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */]])
     ], commonMethods);
     return commonMethods;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=common-methods.js.map
 
 /***/ }),
 
-/***/ 1189:
+/***/ 1190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -178,12 +177,13 @@ var NewLeavePage = (function () {
     };
     NewLeavePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-new-leave',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\new-leave\new-leave.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>New Leave</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card text-center>\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n        <ion-item class="ionitems">\n\n          <ion-label>Half Day</ion-label>\n\n          <ion-toggle [(ngModel)]="leave.isHalfDay" (ionChange)="onHlfDayChange()"></ion-toggle>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-label>{{ leave.isHalfDay ? "On" : "From" }}</ion-label>\n\n          <ion-datetime displayFormat="MMM DD, YYYY" [min]="minFromDate" [max]="maxToDate" [(ngModel)]="leave.from" (ionChange)="onDateChange()"></ion-datetime>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;" [hidden]="leave.isHalfDay">\n\n          <ion-label>To</ion-label>\n\n          <ion-datetime displayFormat="MMM DD, YYYY" [min]="getMinToDate(fromDate)" [max]="maxToDate" [(ngModel)]="leave.to" (ionChange)="onDateChange()"></ion-datetime>\n\n        </ion-item>\n\n\n\n        <ion-item  class="ionitems"  style="margin-top: 10px;">\n\n          <ion-label>Type</ion-label>\n\n          <ion-select [(ngModel)]="leave.lveType">\n\n            <ion-option  value="Planned" *ngIf="LveType">Planned</ion-option>\n\n            <ion-option value="Un-Planned" *ngIf="!LveType">Un-Planned</ion-option>\n\n            <ion-option value="Sick" *ngIf="!LveType">Sick</ion-option>\n\n          </ion-select>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-label>Approver : {{ appContext?.myProfileObject?.manager?.name }}</ion-label>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-textarea placeholder="Reason for leave" maxlength="50" [(ngModel)]="leave.reason"></ion-textarea>\n\n        </ion-item>\n\n        <button class="btnlogin" ion-button type="submit" [disabled]="!leave.reason" full (click)="createLeave()">Apply</button>\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\new-leave\new-leave.html"*/,
+            selector: 'page-new-leave',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\new-leave\new-leave.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>New Leave</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card text-center>\n\n    <ion-card-content>\n\n      <ion-list no-line>\n\n        <ion-item class="ionitems">\n\n          <ion-label>Half Day</ion-label>\n\n          <ion-toggle [(ngModel)]="leave.isHalfDay" (ionChange)="onHlfDayChange()"></ion-toggle>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-label>{{ leave.isHalfDay ? "On" : "From" }}</ion-label>\n\n          <ion-datetime displayFormat="MMM DD, YYYY" [min]="minFromDate" [max]="maxToDate" [(ngModel)]="leave.from" (ionChange)="onDateChange()"></ion-datetime>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;" [hidden]="leave.isHalfDay">\n\n          <ion-label>To</ion-label>\n\n          <ion-datetime displayFormat="MMM DD, YYYY" [min]="getMinToDate(fromDate)" [max]="maxToDate" [(ngModel)]="leave.to" (ionChange)="onDateChange()"></ion-datetime>\n\n        </ion-item>\n\n\n\n        <ion-item  class="ionitems"  style="margin-top: 10px;">\n\n          <ion-label>Type</ion-label>\n\n          <ion-select [(ngModel)]="leave.lveType">\n\n            <ion-option  value="Planned" *ngIf="LveType">Planned</ion-option>\n\n            <ion-option value="Un-Planned" *ngIf="!LveType">Un-Planned</ion-option>\n\n            <ion-option value="Sick" *ngIf="!LveType">Sick</ion-option>\n\n          </ion-select>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-label>Approver : {{ appContext?.myProfileObject?.manager?.name }}</ion-label>\n\n        </ion-item>\n\n\n\n        <ion-item class="ionitems" style="margin-top: 10px;">\n\n          <ion-textarea placeholder="Reason for leave" maxlength="50" [(ngModel)]="leave.reason"></ion-textarea>\n\n        </ion-item>\n\n        <button class="btnlogin" ion-button type="submit" [disabled]="!leave.reason" full (click)="createLeave()">Apply</button>\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\new-leave\new-leave.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_controller__["a" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_controller__["a" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__helper_common_methods__["a" /* commonMethods */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__helper_common_methods__["a" /* commonMethods */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular_navigation_nav_controller__["a" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__helper_common_methods__["a" /* commonMethods */]])
     ], NewLeavePage);
     return NewLeavePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=new-leave.js.map

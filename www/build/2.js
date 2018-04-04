@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 1155:
+/***/ 1156:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotificationsPageModule", function() { return NotificationsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notifications__ = __webpack_require__(1190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notifications__ = __webpack_require__(1191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(632);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index__ = __webpack_require__(1191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index__ = __webpack_require__(1192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,7 +37,7 @@ var NotificationsPageModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__notifications__["a" /* NotificationsPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
-                __WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index__["a" /* TimeAgoPipeModule */]
+                __WEBPACK_IMPORTED_MODULE_4_time_ago_pipe_index__["TimeAgoPipeModule"]
             ],
             exports: []
         }),
@@ -50,11 +51,10 @@ var NotificationsPageModule = (function () {
 /***/ }),
 
 /***/ 1172:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimeAgoPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,7 +64,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+var core_1 = __webpack_require__(1);
 var TimeAgoPipe = (function () {
     function TimeAgoPipe(changeDetectorRef, ngZone) {
         this.changeDetectorRef = changeDetectorRef;
@@ -150,21 +150,21 @@ var TimeAgoPipe = (function () {
             return 3600;
         }
     };
-    TimeAgoPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
-            name: 'timeAgo',
-            pure: false
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
-    ], TimeAgoPipe);
     return TimeAgoPipe;
 }());
-
+TimeAgoPipe = __decorate([
+    core_1.Pipe({
+        name: 'timeAgo',
+        pure: false
+    }),
+    __metadata("design:paramtypes", [core_1.ChangeDetectorRef, core_1.NgZone])
+], TimeAgoPipe);
+exports.TimeAgoPipe = TimeAgoPipe;
 //# sourceMappingURL=time-ago-pipe.js.map
 
 /***/ }),
 
-/***/ 1190:
+/***/ 1191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -249,47 +249,50 @@ var NotificationsPage = (function () {
     };
     NotificationsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-notifications',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\notifications\notifications.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Notifications</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content class="has-header">\n\n    <ion-list>\n\n        <ion-item-sliding *ngFor="let leave of appContext.notificationLeavesCollection| filterNotification: appContext.myReporteesCollection: appContext.myProfileObject">\n\n            <ion-item (click)="openModal(leave)">\n\n                <ion-avatar item-start>\n\n                    <img [src]="leave.owner.photoUrl ? leave.owner.photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n                </ion-avatar>\n\n                <div class="info1">\n\n                    <h2>{{ leave?.owner?.name }}</h2>\n\n                    <span style="clear:both"></span>\n\n                    <p>\n\n                        <ion-icon name="alarm"></ion-icon> {{leave?.from | date : "MMM/dd"}} - {{leave?.to | date:"MMM/dd"}}, {{leave?.to | date:"yyyy"}}\n\n                    </p>\n\n                </div>\n\n                <div class="info2">\n\n                    <p item-content item-end class="ts-globe">{{leave?.createdAt | timeAgo }}\n\n                        <ion-icon name="md-globe"></ion-icon>\n\n                    </p>\n\n                </div>\n\n                <div class="info3" *ngIf="leave.status == 1 || leave.status == 2">\n\n                    <ion-icon name="md-checkmark-circle-outline" item-end [color]="leave.status == 1 ? \'primary\' : \'danger\'" style="margin-bottom:-10px;font-size:15px;"></ion-icon>\n\n                </div>\n\n            </ion-item>\n\n            <ion-item-options side="left" (ionSwipe)="onSwipe(leave)">\n\n                <button ion-button color="primary" *ngIf="canShowClear(leave)" expandable (click)="markAsRead(leave.leaveId)">Clear</button>\n\n                <button ion-button color="secondary" *ngIf="canShowApproveDecline(leave) && leave.status == 0" expandable (click)="approveLeave(leave.leaveId)">Approve</button>\n\n            </ion-item-options>\n\n            <ion-item-options side="right">\n\n                    <button ion-button color="primary" *ngIf="canShowClear(leave)" expandable (click)="markAsRead(leave.leaveId)">Clear</button>\n\n                <button ion-button color="danger" *ngIf="canShowApproveDecline(leave) && leave.status == 0" expandable (click)="declineLeave(leave.leaveId)">Decline</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n    </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\notifications\notifications.html"*/,
+            selector: 'page-notifications',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\notifications\notifications.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>Notifications</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content class="has-header">\n\n    <ion-list>\n\n        <ion-item-sliding *ngFor="let leave of appContext.notificationLeavesCollection| filterNotification: appContext.myReporteesCollection: appContext.myProfileObject">\n\n            <ion-item (click)="openModal(leave)">\n\n                <ion-avatar item-start>\n\n                    <img [src]="leave.owner.photoUrl ? leave.owner.photoUrl : \'assets/imgs/defaults/user.jpg\'">\n\n                </ion-avatar>\n\n                <div class="info1">\n\n                    <h2>{{ leave?.owner?.name }}</h2>\n\n                    <span style="clear:both"></span>\n\n                    <p>\n\n                        <ion-icon name="alarm"></ion-icon> {{leave?.from | date : "MMM/dd"}} - {{leave?.to | date:"MMM/dd"}}, {{leave?.to | date:"yyyy"}}\n\n                    </p>\n\n                </div>\n\n                <div class="info2">\n\n                    <p item-content item-end class="ts-globe">{{leave?.createdAt | timeAgo }}\n\n                        <ion-icon name="md-globe"></ion-icon>\n\n                    </p>\n\n                </div>\n\n                <div class="info3" *ngIf="leave.status == 1 || leave.status == 2">\n\n                    <ion-icon name="md-checkmark-circle-outline" item-end [color]="leave.status == 1 ? \'primary\' : \'danger\'" style="margin-bottom:-10px;font-size:15px;"></ion-icon>\n\n                </div>\n\n            </ion-item>\n\n            <ion-item-options side="left" (ionSwipe)="onSwipe(leave)">\n\n                <button ion-button color="primary" *ngIf="canShowClear(leave)" expandable (click)="markAsRead(leave.leaveId)">Clear</button>\n\n                <button ion-button color="secondary" *ngIf="canShowApproveDecline(leave) && leave.status == 0" expandable (click)="approveLeave(leave.leaveId)">Approve</button>\n\n            </ion-item-options>\n\n            <ion-item-options side="right">\n\n                    <button ion-button color="primary" *ngIf="canShowClear(leave)" expandable (click)="markAsRead(leave.leaveId)">Clear</button>\n\n                <button ion-button color="danger" *ngIf="canShowApproveDecline(leave) && leave.status == 0" expandable (click)="declineLeave(leave.leaveId)">Decline</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n    </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\notifications\notifications.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__providers_toast_message_toast_message__["a" /* ToastMessageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_toast_message_toast_message__["a" /* ToastMessageProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__components_controllers_comments_controller__["a" /* commentsController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__components_controllers_comments_controller__["a" /* commentsController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_leave_servicev2_leave_servicev2__["a" /* LeaveServicev2Provider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_toast_message_toast_message__["a" /* ToastMessageProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_7__components_controllers_comments_controller__["a" /* commentsController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_app_context_app_context__["a" /* AppContextProvider */]])
     ], NotificationsPage);
     return NotificationsPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=notifications.js.map
 
 /***/ }),
 
-/***/ 1191:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 1192:
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimeAgoPipeModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__time_ago_pipe__ = __webpack_require__(1172);
-/* unused harmony namespace reexport */
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var core_1 = __webpack_require__(1);
+var time_ago_pipe_1 = __webpack_require__(1172);
 var TimeAgoPipeModule = (function () {
     function TimeAgoPipeModule() {
     }
-    TimeAgoPipeModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_1__time_ago_pipe__["a" /* TimeAgoPipe */]],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__time_ago_pipe__["a" /* TimeAgoPipe */]],
-        })
-    ], TimeAgoPipeModule);
     return TimeAgoPipeModule;
 }());
-
-
+TimeAgoPipeModule = __decorate([
+    core_1.NgModule({
+        declarations: [time_ago_pipe_1.TimeAgoPipe],
+        exports: [time_ago_pipe_1.TimeAgoPipe],
+    })
+], TimeAgoPipeModule);
+exports.TimeAgoPipeModule = TimeAgoPipeModule;
+__export(__webpack_require__(1172));
 //# sourceMappingURL=index.js.map
 
 /***/ })

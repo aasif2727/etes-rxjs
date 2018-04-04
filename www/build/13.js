@@ -1,6 +1,6 @@
 webpackJsonp([13],{
 
-/***/ 1156:
+/***/ 1157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -120,12 +120,11 @@ var ReportAnnualPage = (function () {
     ], ReportAnnualPage.prototype, "barCanvas", void 0);
     ReportAnnualPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report-annual',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-annual\report-annual.html"*/'<ion-content padding>\n  <ion-card class="report-card">\n    <ion-card-header>\n      Bar Chart\n    </ion-card-header>\n    <ion-card-content>\n      <canvas #barCanvas></canvas>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-annual\report-annual.html"*/,
+            selector: 'page-report-annual',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-annual\report-annual.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Bar Chart\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <canvas #barCanvas></canvas>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-annual\report-annual.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
     ], ReportAnnualPage);
     return ReportAnnualPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=report-annual.js.map

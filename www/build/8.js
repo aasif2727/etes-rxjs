@@ -81,10 +81,9 @@ var commonMethods = (function () {
     };
     commonMethods = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["x" /* ToastController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* LoadingController */]])
     ], commonMethods);
     return commonMethods;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=common-methods.js.map
@@ -148,12 +147,11 @@ var FeedbackPage = (function () {
     };
     FeedbackPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-feedback',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\feedback\feedback.html"*/'<!--\n\n  Generated template for the FeedbackPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Feedback</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item>\n\n\n\n    <ion-input placeholder="Enter Title" type="text" [(ngModel)]=\'title\'></ion-input>\n\n  </ion-item>\n\n  <br/>\n\n  <ion-item>\n\n    <ion-textarea placeholder="Enter a description" [(ngModel)]=\'description\' maxlength="350"></ion-textarea>\n\n  </ion-item>\n\n<br/>\n\n  <button ion-button round full (click)=\'submitFeedback()\'>Submit</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\feedback\feedback.html"*/,
+            selector: 'page-feedback',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\feedback\feedback.html"*/'<!--\n\n  Generated template for the FeedbackPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Feedback</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item>\n\n\n\n    <ion-input placeholder="Enter Title" type="text" [(ngModel)]=\'title\'></ion-input>\n\n  </ion-item>\n\n  <br/>\n\n  <ion-item>\n\n    <ion-textarea placeholder="Enter a description" [(ngModel)]=\'description\' maxlength="350"></ion-textarea>\n\n  </ion-item>\n\n<br/>\n\n  <button ion-button round full (click)=\'submitFeedback()\'>Submit</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\feedback\feedback.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__helper_common_methods__["a" /* commonMethods */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__helper_common_methods__["a" /* commonMethods */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_app_context_app_context__["a" /* AppContextProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_3__helper_common_methods__["a" /* commonMethods */]])
     ], FeedbackPage);
     return FeedbackPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=feedback.js.map

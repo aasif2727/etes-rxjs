@@ -1,6 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 1158:
+/***/ 1159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,12 +117,11 @@ var ReportTeamPage = (function () {
     };
     ReportTeamPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-report-team',template:/*ion-inline-start:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-team\report-team.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Line Chart\n\n    </ion-card-header>\n\n    <ion-card-content *ngIf="doughnutChartData">\n\n        <div style="display: block">\n\n<!--            <canvas baseChart-->\n\n<!--            [data]="doughnutChartData"-->\n\n<!--            [labels]="doughnutChartLabels"-->\n\n<!--            [chartType]="doughnutChartType"-->\n\n<!--></canvas>-->\n\n          </div>\n\n\n\n    </ion-card-content>\n\n \n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\xakhan271\Documents\GitHub\elms\src\pages\report-team\report-team.html"*/,
+            selector: 'page-report-team',template:/*ion-inline-start:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-team\report-team.html"*/'<ion-content padding>\n\n  <ion-card class="report-card">\n\n    <ion-card-header>\n\n      Line Chart\n\n    </ion-card-header>\n\n    <ion-card-content *ngIf="doughnutChartData">\n\n        <div style="display: block">\n\n<!--            <canvas baseChart-->\n\n<!--            [data]="doughnutChartData"-->\n\n<!--            [labels]="doughnutChartLabels"-->\n\n<!--            [chartType]="doughnutChartType"-->\n\n<!--></canvas>-->\n\n          </div>\n\n\n\n    </ion-card-content>\n\n \n\n\n\n\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\PITU\Documents\GitHub\etes-rxjs\src\pages\report-team\report-team.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["r" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["a" /* AngularFirestore */]])
     ], ReportTeamPage);
     return ReportTeamPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=report-team.js.map
