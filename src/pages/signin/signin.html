@@ -1,0 +1,28 @@
+
+  <ion-content padding class="img">
+    <div class="formcontent">
+    <form id="signInForm" [formGroup]="signInForm" (ngSubmit)="signIn()">
+      <ion-card text-center>
+        <ion-card-header>
+          <span class="fontbolder"> Sign In</span>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list no-line>
+            <ion-item class="ionitems">
+                <ion-label> <ion-icon name="mail"></ion-icon> </ion-label>
+              <ion-input type="text" formControlName="userid" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item class="ionitems" style="margin-top: 10px;">
+                <ion-label> <ion-icon name="eye"></ion-icon> </ion-label>
+              <ion-input type="password" formControlName="password" placeholder="Password">
+              </ion-input>
+            </ion-item>
+            <button class="btnlogin" ion-button type="submit" [disabled]="!signInForm.valid" block>Sign In</button>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </form>
+    <!-- <button class="signup-btn" ion-button clear full color="dark" (tap)="navToSignup()">Not a member yet? Create your account</button> -->
+    <button ion-button clear full color="dark" (tap)="forgotPassword()" style="color:white">Forgot | Reset Password</button>
+  </div>
+  </ion-content>

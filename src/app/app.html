@@ -1,0 +1,39 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <div class="UserHeader">
+      <ion-title>
+        <ion-item class="Itemheader">
+          <ion-avatar item-start>
+            <!-- <img [src]="photoURL ? photoURL : 'assets/imgs/defaults/user.jpg'" style="width:80px;height:80px;border-radius:50%"> -->
+            <img style="width: 65px;height: 65px;" [src]="(appContext.myProfileObject?.photoUrl) || 'assets/imgs/defaults/user.jpg' ">
+          </ion-avatar>
+        </ion-item>
+      </ion-title>
+      <h2 class="UserName"> {{ (appContext.myProfileObject?.name) || "Guest" }}</h2>
+      <p class="UserEmail"> {{ (appContext.myProfileObject?.email)}}</p>
+    </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content style="background-color: #f5f5f5 !important">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="home" item-left *ngIf="p.title == 'Home'"></ion-icon>
+        <ion-icon name="contact" item-left *ngIf="p.title == 'Profile'"></ion-icon>
+        <ion-icon name="card" item-start *ngIf="p.title == 'Leaves'"></ion-icon>
+        <!-- <ion-icon name="stats" item-left *ngIf="p.title == 'Reports'"></ion-icon> -->
+        <ion-icon name="logo-rss" item-left *ngIf="p.title == 'Feedback'"></ion-icon>
+        {{p.title}}
+      </button>
+      <button menuClose ion-item (click)="signOut()">
+          <ion-icon name="log-out" md="md-log-out" item-start></ion-icon>
+          Sign Out
+        </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

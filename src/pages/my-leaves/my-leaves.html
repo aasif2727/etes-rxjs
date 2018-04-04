@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ viewTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <calendar [eventSource]="eventSource" 
+    [calendarMode]="calendarDefaults.mode" 
+    [currentDate]="calendarDefaults.currentDate" 
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)" 
+    (onTimeSelected)="onTimeSelected($event)" step="30" class="calendar">
+  </calendar>
+
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="openNewLeave()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

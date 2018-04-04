@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Leave</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card text-center>
+    <ion-card-content>
+      <ion-list no-line>
+        <ion-item class="ionitems">
+          <ion-label>Half Day</ion-label>
+          <ion-toggle [(ngModel)]="leave.isHalfDay" (ionChange)="onHlfDayChange()"></ion-toggle>
+        </ion-item>
+
+        <ion-item class="ionitems" style="margin-top: 10px;">
+          <ion-label>{{ leave.isHalfDay ? "On" : "From" }}</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" [min]="minFromDate" [max]="maxToDate" [(ngModel)]="leave.from" (ionChange)="onDateChange()"></ion-datetime>
+        </ion-item>
+
+        <ion-item class="ionitems" style="margin-top: 10px;" [hidden]="leave.isHalfDay">
+          <ion-label>To</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" [min]="getMinToDate(fromDate)" [max]="maxToDate" [(ngModel)]="leave.to" (ionChange)="onDateChange()"></ion-datetime>
+        </ion-item>
+
+        <ion-item  class="ionitems"  style="margin-top: 10px;">
+          <ion-label>Type</ion-label>
+          <ion-select [(ngModel)]="leave.lveType">
+            <ion-option  value="Planned" *ngIf="LveType">Planned</ion-option>
+            <ion-option value="Un-Planned" *ngIf="!LveType">Un-Planned</ion-option>
+            <ion-option value="Sick" *ngIf="!LveType">Sick</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="ionitems" style="margin-top: 10px;">
+          <ion-label>Approver : {{ appContext?.myProfileObject?.manager?.name }}</ion-label>
+        </ion-item>
+
+        <ion-item class="ionitems" style="margin-top: 10px;">
+          <ion-textarea placeholder="Reason for leave" maxlength="50" [(ngModel)]="leave.reason"></ion-textarea>
+        </ion-item>
+        <button class="btnlogin" ion-button type="submit" [disabled]="!leave.reason" full (click)="createLeave()">Apply</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

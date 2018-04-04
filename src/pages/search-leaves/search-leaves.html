@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Search Leave </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card style="width: 95vw;margin-left: -8px;">
+    <ion-card-content>
+      <ion-list no-line>
+        <ion-item>
+          <ion-label>From</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" [min]="minFromDate" (ionChange)="validatedate()" [max]="getMaxFromDate(toDate)" [(ngModel)]="fromDate"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>To</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" [min]="getMinToDate(fromDate)" (ionChange)="validatedate()" [max]="maxToDate" [(ngModel)]="toDate"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="!disableSelector">
+          <ion-label>Team</ion-label>
+          <ion-select [(ngModel)]="Myteam">
+            <ion-option [value]="res.name" *ngFor="let res of responseteam">
+              {{res.name}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <button ion-button round full [disabled]="!SearchResults" (click)="searchLeave(fromDate, toDate,Myteam)">Search</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <br/>
+
+  <div *ngIf="appContext.searchedLeavesCollection | filterBySearch: appContext.getAllTeamsCollection: appContext.myReporteesCollection: appContext.myProfileObject: Myteam; else loading">
+    <!-- <ion-card class="cardBorder" [ngStyle]="{'border-left-color':getColor(res.status)}" *ngFor="let res of appContext.searchedLeavesCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject"> -->
+    <ion-card class="cardBorder" [ngStyle]="{'border-left-color':getColor(res.status)}" *ngFor="let res of appContext.searchedLeavesCollection | filterBySearch: appContext.getAllTeamsCollection: appContext.myReporteesCollection: appContext.myProfileObject: Myteam;">
+
+      <div class="itemStyle">
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="res.owner.photoUrl ? res.owner.photoUrl : 'assets/imgs/defaults/user.jpg'">
+          </ion-avatar>
+          <h2 class="itemStyle">{{res?.owner?.name }}</h2>
+          <p>{{res?.owner?.team?.id}}</p>
+          <!-- <h6 class="contentStyle" style="font-size:12px">&bull;&nbsp;{{res?.createdAt | date : "MMM d, y" }} &nbsp;&nbsp;&bull; {{res?.lveType}} </h6> -->
+          <p>Requested on: {{res?.createdAt | date : "MMM d, y" }}</p>
+        </ion-item>
+      </div>
+      <hr>
+      <ion-card-content>
+        <div class="contentStyle">
+          <p> Hey!!! I will be on&nbsp;{{res?.lveType}} leave from
+            <span class="FontAvatar">{{res?.from | date : "MMM d, y"}}</span> to
+            <span class="FontAvatar">{{res?.to | date : "MMM d, y"}}</span> due to
+            <span class="FontAvatar">{{res?.reason }}</span>
+          </p>
+        </div>
+      </ion-card-content>
+
+      <ng-container *ngIf="res?.status=='0' && res?.owner.manager.email == appContext.myProfileObject.email">
+        <hr>
+        <ion-row>
+          <ion-col (click)=acceptLeave(res?.leaveId) item-start style="text-align: center;">
+            <div>
+              <button class="child" ion-button icon-left clear small>
+                <!-- <img src="assets/imgs/happy.png" /> -->
+                <ion-icon style="font-size:2em; color:#238527;" name="checkmark"></ion-icon>
+              </button>
+            </div>
+            <div>
+              <button ion-button icon-left clear small>
+                <div class="actionAavatar">Approve</div>
+              </button>
+            </div>
+          </ion-col>
+          <ion-col (click)=CallPrompt(res?.leaveId) item-end style="text-align: center;">
+            <div>
+              <button ion-button icon-left clear small>
+                <!-- <img src="assets/imgs/angryblack.png" /> -->
+                <ion-icon style="font-size:2em; color:#E57373;" name="close"></ion-icon>
+              </button>
+            </div>
+            <div>
+              <button ion-button icon-left clear small>
+                <div class="actionRavatar">Reject</div>
+              </button>
+            </div>
+          </ion-col>
+          <ion-col (click)=MoreInfo(res) item-end style="text-align: center;">
+            <div>
+              <button ion-button icon-left clear small>
+                <ion-icon style="font-size:2em;" name="information-circle"></ion-icon>
+              </button>
+            </div>
+            <div>
+              <button ion-button icon-left clear small>
+                <div class="actionIavatar">More Info</div>
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ion-card>
+  </div>
+
+
+
+
+  <ng-template #loading>
+    <img style="margin-left: auto;margin-right: auto;display: block;" [src]="'assets/imgs/defaults/noresults.jpg'">
+    <br/>
+    <div style="text-align: center;">
+      <span class="contentStyle">Whoops!!! &nbsp;</span>
+      <span class="itemStyle">No Results Found </span>
+    </div>
+  </ng-template>
+</ion-content>

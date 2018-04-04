@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+            <ion-icon (click)="closeModal()" name="md-arrow-round-back"></ion-icon> &nbsp;
+            View
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="cardBorder" [ngStyle]="{'border-left-color':getColor(status)}">
+    <div class="itemStyle">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="photoUrl ? photoUrl : 'assets/imgs/defaults/user.jpg'">
+        </ion-avatar>
+        <h2>{{name }}</h2>
+        <p>{{createdAt | date : "MMM d, y" }}</p>
+      </ion-item>
+    </div>
+    <hr>
+    <ion-card-content>
+      <div class="contentStyle">
+        <p> Hey!!! I will be on leave from
+          <span class="FontAvatar">{{from | date : "MMM d, y"}}</span> to
+          <span class="FontAvatar">{{to | date : "MMM d, y"}}</span> due to
+          <span class="FontAvatar">{{reason }}</span>
+        </p>
+      </div>
+    </ion-card-content>
+    <hr>
+  </ion-card>
+
+<div *ngIf="appContext.duringthisTimeCollection">
+  <h3 style="position: relative;left: 6px;">During This Time</h3>
+
+  <ion-list>
+    <ion-item  *ngFor="let res of appContext.duringthisTimeCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject">
+      <ion-thumbnail item-start>
+        <img [src]="res.owner.photoUrl ? res.owner.photoUrl : 'assets/imgs/defaults/user.jpg'">
+      </ion-thumbnail>
+      <h2 class="itemStyle">{{res?.owner?.name }}</h2>
+      <p class="contentStyle"> {{res?.owner?.team?.name }}</p>
+
+      <p>{{res?.from | date : "MMM d, y"}}&nbsp;
+        <ion-icon name="arrow-round-forward"></ion-icon>&nbsp;
+        {{res?.to | date : "MMM d, y"}}
+      </p>
+      <hr>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>

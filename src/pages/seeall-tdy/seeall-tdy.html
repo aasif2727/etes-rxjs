@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>WhosOff Today</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="has-header">
+  <div>
+    <ion-card *ngFor="let res of appContext.todaysLeavesCollection | filterByIsManagerFlag: appContext.myTeamMembersCollection: appContext.myReporteesCollection: appContext.myProfileObject">
+      <!-- <img src="img/nin-live.png"/> -->
+
+      <div style="background-color:#f5f8fb;">
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="res.owner.photoUrl ? res.owner.photoUrl : 'assets/imgs/defaults/user.jpg'">
+            <!-- <ion-icon style="font-size:2.2em" name="md-contact"></ion-icon> -->
+          </ion-avatar>
+          <h2>{{res?.owner?.name }}</h2>   
+          <h2  style="font-size:12px">&bull;{{res?.owner?.team?.name}}</h2>
+          <h6 style="font-size:12px">Req. On: {{res?.createdAt | date : "MMM d, y" }} [ {{res?.lveType}} ]</h6>
+        </ion-item>
+      </div>
+      <hr>
+      <ion-card-content style="background-color:#f5f8fb;">
+        <!-- <h3> Reason For Leave:</h3><p>{{data.reason }}</p> -->
+        <div class="contentStyle">
+          <p> Hey!!! I will be on leave from
+            <span class="FontAvatar">{{res.from | date : "MMM d, y"}}</span> to
+            <span class="FontAvatar">{{res.to | date : "MMM d, y"}}</span> due to
+            <span class="FontAvatar">{{res.reason }}</span>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="appContext.todaysLeavesCollection.length == 0">
+    <p align="center" style="color:#0699b3;font-weight:bold;font-size:small" >No Events </p>  
+  </div>
+  <br/>
+</ion-content>

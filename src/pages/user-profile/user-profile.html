@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="editProfile()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content style="width:100%;height:100%">
+    <div style="display:table;width:100%;height:40%;background-color:#039be5;text-align:center;">
+        <div style="display:table-cell;vertical-align:middle;">          
+              <img class="profilepic" [src]="user.photoUrl ? user.photoUrl : 'assets/imgs/defaults/user.jpg'" #myImage (click)="presentImage(myImage)"/>
+              <ion-icon name="camera" (click)="changePicture()" style="color:white;position: relative;right: 30px;bottom: 5px;font-size: 1.5em;"></ion-icon>
+              <h2 style="color:white;text-align: center; position: relative; right: 5px;font-family: g_bold;">{{ user?.name }}</h2>          
+        </div>
+      </div>    
+  <ion-list>
+    <ion-item>
+      <ion-icon name="mail" style="color:rgb(238, 198, 22)" item-start></ion-icon>
+      <h2>Email</h2>
+      <p>{{ user?.email }}</p>          
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" style="color:rgb(16, 160, 59)" item-start></ion-icon>
+      <h2>Mobile</h2>
+      <p>{{ user?.phoneNumber }}</p>          
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person" style="color:rgb(38, 113, 226)" item-start></ion-icon>
+      <h2>Manager</h2>
+      <p>{{ user?.manager?.name }}</p>          
+    </ion-item>
+    <ion-item>
+      <ion-icon name="people" style="color:rgb(116, 75, 21)" item-start></ion-icon>
+      <h2>Team</h2>
+      <p>{{ user?.team?.name }}</p>          
+    </ion-item>
+  </ion-list>
+</ion-content>
+  
