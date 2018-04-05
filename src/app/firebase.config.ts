@@ -1,9 +1,9 @@
 // AF2 Settings
 export const FirebaseConfig = {
-  apiKey: "AIzaSyA9t3RPOQndRBcyB0xXmceaVOxTh0eDwKQ",
-  authDomain: "ee-lms.firebaseapp.com",
-  databaseURL: "https://ee-lms.firebaseio.com",
-  projectId: "ee-lms",
-  storageBucket: "ee-lms.appspot.com",
-  messagingSenderId: "750036322505"
+  apiKey: "AIzaSyA-oRghsYmtb114K7XKsZsbtvLyRAKWYJo",
+  authDomain: "etes-rxjs.firebaseapp.com",
+  databaseURL: "https://etes-rxjs.firebaseio.com",
+  projectId: "etes-rxjs",
+  storageBucket: "etes-rxjs.appspot.com",
+  messagingSenderId: "41672328715"
 };

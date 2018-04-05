@@ -32,7 +32,7 @@ export class NotificationsPage {
   }
 
   approveLeave(leaveId) {
-    this.leavesSvc.updateLeaveStatus(leaveId, 1, "Approved");
+    this.leavesSvc.updateLeaveStatus(leaveId,true, 1, "Approved");
   }
 
   declineLeave(leaveId) {
